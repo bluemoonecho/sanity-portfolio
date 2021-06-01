@@ -10,10 +10,12 @@ import About from './components/About';
 import SinglePost from './components/SinglePost';
 import Post from './components/Post';
 import Project from './components/Project';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <Router>
+      <Navbar />
       <Switch> 
         <Route component={Home} path='/' exact/>
         <Route component={About} path='/about'/>
