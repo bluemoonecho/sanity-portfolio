@@ -34,7 +34,7 @@ const SinglePost = () => {
     },[slug])
 
     if(!singlePost) return <div> Loading... </div>
-
+    
     return (
         <main className='bg-gray-200 min-h-screen p-12'>
             <article classsName='container shadow-lg mx-auto bg-green-100 rounded-lg'>
