@@ -9,10 +9,11 @@ const Home = () => {
             className='absolute object-cover w-full h-full'
             />
             <section className='relative flex justify-center min-h-screen pt-12 lg:pt-64 pt-8'>
-                <h1 className='text-6xl text-white font-bold cursive leading-none lg:leadind-snug text-align-center'>
+                <h1 className='text-5xl text-white font-bold cursive leading-none lg:leadind-snug text-align-center'>
                 Hello there! I'm Sabine 👋
                 <br></br>
-                A Pisces, a coder and a musican
+                <br></br>
+                Pisces / Coder / Musician
                 </h1> 
             </section>
         </main>

@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './components/Home';
 import About from './components/About';
@@ -13,6 +12,7 @@ import Project from './components/Project';
 import Navbar from './components/Navbar';
 
 const App = () => {
+
   return (
     <Router>
       <Navbar />

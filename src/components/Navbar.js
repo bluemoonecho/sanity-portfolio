@@ -11,8 +11,8 @@ const Navbar = () => {
                 to='/' exact 
                 className='inflex-flex items-center py-3 px-3 mr-4 hover:text-indigo-50 text-2xl font-bold cursive tracking-wide'
                 activeClassName='text-white'
-                > 
-                S.H./fullstack dev
+                >
+                🐳 /fullstack dev
                 </NavLink>
                 <NavLink 
                 to='/post'
