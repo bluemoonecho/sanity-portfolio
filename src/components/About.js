@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import emailjs from 'emailjs-com'
 import sanityClient from '../client'
 import ocean from '../assets/ocean.jpg'
 import imageUrlBuilder from '@sanity/image-url'
@@ -11,6 +12,18 @@ function urlFor(source){
     return builder.image(source)
 }
 
+const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_4zlyo55', 'template_exxkxl9', e.target, 'user_mBkigUW7MLoS32Yvr7nl0')
+    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+    e.target.reset()
+}
+    
 const About = () => {
 
     const [author, setAuthor] = useState(null);
@@ -23,7 +36,9 @@ const About = () => {
         }`).then((data)=> setAuthor(data[0]))
         .catch(console.error)
     })
+
     if(!author) return <div>Loading...</div>
+    
     return (
         <main className='relative'>
             <img src={ocean} alt='ocean' className='absolute w-full'/>
@@ -47,9 +62,30 @@ const About = () => {
                         />
                     </div>
                 </div>
+                    <div className="">
+                    <form onSubmit={sendEmail}>
+                            <div className="">
+                            <h3>Get in touch</h3>
+                                <div className="border rounded m-1 w-20 bg-gray-100">
+                                    <input type="text" className="form-control" placeholder="Name" name="name"/>
+                                </div>
+                                <div className="">
+                                    <input type="email" className="form-control" placeholder="Email Address" name="email"/>
+                                </div>
+                                <div className="">
+                                    <input type="text" className="form-control" placeholder="Subject" name="subject"/>
+                                </div>
+                                <div className="">
+                                    <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
+                                </div>
+                                <button type='submit' className='flex justify-center bg-indigo-200 py-2 h-10 w-34 rounded my-2 mx-2'>
+                                    <p>Send me an email</p>
+                                </button>
+                            </div>
+                    </form>
+                    </div>
                 </section>
             </div>
-
         </main>
     )
 }
